@@ -4,6 +4,17 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
 
+        subsets = [[]]
+
+        for num in nums:
+            size = len(subsets)
+            for index in range(size):
+                mini_set = subsets[index][:]
+                mini_set.append(num)
+                subsets.append(mini_set)
+        return subsets
+
+        """
         iters = int(math.pow(2,len(nums)))
 
         subsets = []
@@ -21,3 +32,4 @@ class Solution:
             subsets.append(cur_set)
 
         return subsets
+        """
