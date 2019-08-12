@@ -17,3 +17,24 @@ class Solution:
                 sol[-1][1] = max(sol[-1][1],interval[1])
 
         return sol
+
+
+"""
+Modifying Intervals in-place, without using extra space
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+
+        intervals.sort(key=lambda k:k[0])
+        index = 1
+
+        while index<len(intervals):
+
+            if intervals[index][0]<=intervals[index-1][1]:
+                intervals[index-1][1] = max(intervals[index-1][1],intervals[index][1])
+                intervals.pop(index)
+
+            else:
+                index+=1
+
+        return intervals
+"""
