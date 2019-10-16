@@ -1,4 +1,27 @@
 # 53. Maximum Subarray
+
+# Time: O(n)
+# Space: O(1)
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        """
+        At each num, you either start a new subarray, or continue last one.
+        The decision is based on whether, add the previous number leads to a
+        larger sum compared to the current element.
+        cur_max = max(num, cur_max+num)
+        """
+
+        cur_max = float('-inf')
+        over_all_max = float('-inf')
+
+        for num in nums:
+            cur_max = max(num, cur_max+num)
+            over_all_max = max(over_all_max, cur_max)
+
+        return over_all_max
+
+
 # Time: O(len(nums))
 # Space: O(1)
 class Solution:
