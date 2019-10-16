@@ -3,7 +3,9 @@
 
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
-
+        """
+        In dp_arr, either you increase previous subsequence or start a new one.
+        """
         if not nums:
             return 0
         cur_max = None
@@ -25,7 +27,3 @@ class Solution:
 
         # print(dp_arr)
         return max(dp_arr)
-
-
-
-        
