@@ -1,3 +1,31 @@
+# Time: O(s+t)
+# Space: O(max(s,t)), can be done in constant space using pointers
+class Solution:
+    def backspaceCompare(self, S: str, T: str) -> bool:
+
+        stack = []
+
+        for ch in S:
+            if ch!='#':
+                stack.append(ch)
+            else:
+                if stack:
+                    stack.pop()
+
+        word1 = "".join(stack)
+        stack = []
+        for ch in T:
+            if ch!='#':
+                stack.append(ch)
+            else:
+                if stack:
+                    stack.pop()
+
+        word2 = "".join(stack)
+
+        return word1==word2
+
+
 # Time: O(len(S)+len(T))
 # Space: O(len(S)+len(T))
 
