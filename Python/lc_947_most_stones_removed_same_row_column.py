@@ -48,3 +48,49 @@ class DSU:
 
         # print(self.parent)
         return
+
+# Oct 27th '19
+# Time: ~O(1), due to path compression, ackerman number to be precise
+# Space: O(N)
+
+class Solution:
+    def removeStones(self, stones: List[List[int]]) -> int:
+        """
+        Order of removals matters, but we don't have to find the order, just the count of moves.
+        - We can always find an order such that # [size(component)-1] stones can be removed.
+
+
+        Key observation:
+        - Stones which share a row or column for a component
+        - Find connected components, the number of moves will be size of component -1. Do this for all components.
+
+        Calculate connected components using Disjoint set units.
+
+        If i store rows as nodes
+        - need unique way to store columns. can store ~col = -col-1. or store them beyond range of rows.
+        """
+
+        dsu = {}
+
+        for x,y in stones:
+
+            if x not in dsu:
+                dsu[x] = x
+            if ~y not in dsu:
+                dsu[~y] = ~y
+
+            par_x = self.parent(dsu, x)
+            par_y = self.parent(dsu, ~y)
+
+            dsu[par_y] = par_x
+
+        # print(dsu)
+        return len(stones) - len(set(self.parent(dsu, x[0]) for x in stones))
+
+
+    def parent(self, dsu, x):
+
+        if dsu[x]!=x:
+            dsu[x] = self.parent(dsu, dsu[x])
+
+        return dsu[x]
