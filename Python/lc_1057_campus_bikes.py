@@ -1,3 +1,42 @@
+# Time: O(w*(b+blogb))
+# Space: O(w*b)
+# Oct 27th '19
+
+class Solution:
+    def assignBikes(self, workers: List[List[int]], bikes: List[List[int]]) -> List[int]:
+        import heapq
+
+        worker_map = collections.defaultdict(list)
+
+        for wi, worker in enumerate(workers):
+            for bi, bike in enumerate(bikes):
+                dist = self.man_distance(worker, bike)
+                worker_map[wi].append([dist, wi, bi])
+            worker_map[wi].sort(reverse=True)
+
+        assigned_bikes = set()
+
+        heap = [val.pop() for val in worker_map.values()]
+        heapq.heapify(heap)
+
+        worker_bikes = [None]*len(workers)
+
+        while len(assigned_bikes)<len(workers):
+
+            min_dist, wi, bi = heapq.heappop(heap)
+
+            if bi not in assigned_bikes:
+                assigned_bikes.add(bi)
+                worker_bikes[wi]=bi
+            else:
+                next_dist_vals = worker_map[wi].pop()
+                heapq.heappush(heap, next_dist_vals)
+
+        return worker_bikes
+
+    def man_distance(self, p1,p2):
+        return abs(p1[0]-p2[0])+abs(p1[1]-p2[1])
+
 # Time: WBlogB + WlogW <<-- Review
 # Space: WB
 
