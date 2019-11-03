@@ -22,7 +22,7 @@ class Solution(object):
         left_height = self.depth(root.left)
         right_height = self.depth(root.right)
 
-        if left_height==right_height:
+        if left_height==right_height:           # If heights are same, then we know left tree is full, and it's number of nodes are 2^height-1. we can countNodes of right subtree.
             total_count = (2**left_height - 1) + 1 + self.countNodes(root.right)  # + 1 for root
 
         else:
@@ -41,7 +41,7 @@ class Solution(object):
             root = root.left
 
         return count
-        
+
 
 
 # Definition for a binary tree node.
