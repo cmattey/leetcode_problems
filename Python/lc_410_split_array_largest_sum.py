@@ -20,7 +20,7 @@ class Solution:
         10+8 (eol)
         groups+=1 (=2)
 
-        find max out of these groups, and return that.
+        repeat to make group size smaller
         if num_groups>m: increase size of group, by increasing lower_bound.
         """
 
