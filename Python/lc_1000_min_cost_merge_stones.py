@@ -36,7 +36,7 @@ class Solution:
         if (start,end) in my_dict: # if we've already calculated the min_cost for this range.
             return my_dict[(start,end)]
 
-        # Sorry, about the extended parameter list, you can just nest the helper function. I prefer having it separate (for some reason :shrug:).
+        # Sorry, about the extended parameter list, you can just nest the helper function. 
         res = min(self.dp_helper(start, temp, K, stones, cum_sum, my_dict) + self.dp_helper(temp+1, end, K, stones, cum_sum, my_dict) for temp in range(start, end, K-1))
         # Splitting start-end range into various [prefix(start-temp)][suffix(temp+1,end)], and calculating min sum for each smaller range, and storing it in map later.
 
@@ -99,7 +99,6 @@ class Solution:
         """
         For each location, we have the option of starting a pile at that location.
         """
-        memo = {}
 
         if len(stones)==1:
             return 0
@@ -110,7 +109,7 @@ class Solution:
         return self.min_count if self.min_count!=float('inf') else -1
 
     def rec(self, stones, start, K, cur_cost):
-        print(stones)
+        # print(stones)
         if len(stones)==K:
             cur_cost+=sum(stones)
             self.min_count = min(self.min_count, cur_cost)
@@ -119,8 +118,9 @@ class Solution:
         if len(stones)<K:
             return
 
-#       combine step
-#       slow because of slicing, not recommended
+#       Combine step
+#       Slow because of slicing, not recommended
+#       Repeated calculations
         prev = stones[:start]
         next = stones[start+K:]
         merged = sum(stones[start:start+K])
