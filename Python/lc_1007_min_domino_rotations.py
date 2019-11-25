@@ -1,3 +1,28 @@
+# Nov 17th '19
+# Time: O(n)
+# Space: O(1)
+class Solution:
+    def minDominoRotations(self, A: List[int], B: List[int]) -> int:
+
+        min_a = self.min_count(A[0], A, B)
+        return min_a if min_a!=-1 else self.min_count(B[0], A, B)
+
+    def min_count(self, el, A, B):
+        """
+        Number of ways to convert all elements of A and B into el
+        """
+        swaps_a = 0
+        swaps_b = 0
+        for i in range(len(A)):
+            if A[i]!=el and B[i]!=el:
+                return -1
+            elif A[i]!=el: # and B[i]==el
+                swaps_a+=1
+            elif B[i]!=el: # and A[i]==el
+                swaps_b+=1
+
+        return min(swaps_a, swaps_b)
+
 # Time: O(min(a,b))
 # Space: O(a+b)
 
