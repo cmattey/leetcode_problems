@@ -1,5 +1,5 @@
 # Time: #words*avg(word_size)
-# Space: O(1), excluding output
+# Space: O(#words*len(w)), w = word in list, used in ch_map, assigned_chars
 
 class Solution:
     def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
@@ -25,4 +25,3 @@ class Solution:
                     matches.append(word)
 
         return matches
-                
