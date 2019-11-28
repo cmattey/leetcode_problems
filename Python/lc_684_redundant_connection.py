@@ -1,3 +1,48 @@
+# Nov 25th '19
+# O(~N), ~O(n*(ack(N))) inverse Ackerman function
+# O(N)
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+
+        dsu = {}
+        rank = collections.defaultdict(int)
+
+        for p1, p2 in edges:
+
+            par1 = self.dsu_parent(p1, dsu, rank)
+            par2 = self.dsu_parent(p2, dsu, rank)
+
+            if par1==par2:
+                return [p1, p2]
+
+            self.dsu_union(p1, p2, dsu, rank)
+
+
+
+
+    def dsu_union(self, p1, p2, dsu, rank):
+
+        par1 = self.dsu_parent(p1, dsu, rank)
+        par2 = self.dsu_parent(p2, dsu, rank)
+
+        if rank[par1]>=rank[par2]:
+            dsu[par2] = par1
+        elif rank[par1]<rank[par2]:
+            dsu[par1] = par2
+
+    def dsu_parent(self, p1, dsu, rank):
+
+        if p1 not in dsu:
+            dsu[p1] = p1
+            rank[p1] = 1
+
+        if dsu[p1]!=p1:
+            dsu[p1] = self.dsu_parent(dsu[p1], dsu, rank)
+
+        return dsu[p1]
+
+
+
 # Time: ~O(n). Haven't used union by rank in dsu yet
 # Space: O(n) self.sets in dsu implementation
 
