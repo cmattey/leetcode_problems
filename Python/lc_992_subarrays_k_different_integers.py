@@ -1,5 +1,5 @@
-# Time: O(n)
-# Space: O(n)
+# Time: O(n), n = len(A)
+# Space: O(K)
 
 class Solution:
     import collections
