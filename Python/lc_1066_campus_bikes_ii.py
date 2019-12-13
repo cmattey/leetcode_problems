@@ -1,4 +1,47 @@
 # Oct 27th '19
+
+# Dec 5th '19
+# Time: O(PlogP), where P = permutations of picking w bikes out of b bPw = b!/(b-w)!, and we do heap operations which is logP, so PlogP
+# Space: O(PlogP)
+class Solution:
+    def assignBikes(self, workers: List[List[int]], bikes: List[List[int]]) -> int:
+        import heapq
+
+        assigned_bikes = [-1]*len(bikes) # note if a worker has been assigned a bike
+
+
+        total_dist = 0
+        seen = set()
+        heap = [( total_dist, 0, tuple(assigned_bikes))] # total_cost, worker_index, assigned_worker_arr
+
+        while True:
+
+            cur_dist, cur_worker, ab = heapq.heappop(heap)
+
+            if cur_worker==len(workers):
+                return cur_dist
+
+            if (ab) in seen:
+                continue
+
+            seen.add((ab))
+
+            for bi, bike in enumerate(bikes):
+                if list(ab)[bi]==1:
+                    continue
+
+                temp_ab = list(ab[:])
+                temp_ab[bi] = 1
+                heapq.heappush(heap, (cur_dist+self.man_dist(workers[cur_worker], bike), cur_worker+1, tuple(temp_ab)))
+
+
+    def man_dist(self, p1, p2):
+        return abs(p1[0]-p2[0]) + abs(p1[1]-p2[1])
+
+
+
+
+
 # Time: O(w*b!)
 # Space: O(b) + stack space
 
