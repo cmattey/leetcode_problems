@@ -2,9 +2,7 @@
 # Space: O(S*len(nums))
 class Solution:
     def findTargetSumWays(self, nums: List[int], S: int) -> int:
-        """
-        TLE Solution
-        """
+
         if not nums:
             return 0
 
