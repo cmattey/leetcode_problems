@@ -7,7 +7,7 @@ class SnapshotArray:
         snap->  O(1)
         get->   O(log(set calls for that index)) worse case: O(log(snaps))
     Space:
-        O(sets called + length)  
+        O(sets called + length)
     """
     def __init__(self, length: int):
         self.arr = [[[0,0]] for _ in range(length)] # [snap_id, value]
@@ -58,6 +58,25 @@ class SnapshotArray:
                 left = mid
 
         return arr[left][1]
+
+        """
+        Alternate binary search approach: Errichto
+        We are looking for largest value smaller than or equal to target
+
+        left = 0
+        right = len(arr)-1
+        ans = -1
+        while left<=right:
+
+            mid = (left+right)//2
+            if arr[mid][0]<=snap_id:
+                ans = mid
+                left = mid+1
+            else:
+                right = mid-1
+
+        return arr[ans][1]
+        """
 
 # Your SnapshotArray object will be instantiated and called as such:
 # obj = SnapshotArray(length)
