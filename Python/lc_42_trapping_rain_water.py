@@ -1,3 +1,44 @@
+# Nov 26th '19
+# Time: O(n)
+# Space: O(1)
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        """
+        Constant Space Solution
+        Key idea is to measure the water chunk on top of each column,
+        using the max-height of column to it's left and right.
+        """
+        total_water = 0
+
+
+
+        left = 0
+        right = len(height)-1
+
+        left_max = float('-inf')
+        right_max = float('-inf'
+                         )
+        while left<right:
+
+            if height[right]>height[left]:
+
+                if height[left]>left_max:
+                    left_max = height[left]
+                else:
+                    total_water+=left_max-height[left]
+                left+=1
+
+            else:
+
+                if height[right]>right_max:
+                    right_max = height[right]
+                else:
+                    total_water+=right_max-height[right]
+
+                right-=1
+
+        return total_water
+
 # Time: O(n)
 # Space: O(n) -> Can be reduced to O(1), using two pointers
 
