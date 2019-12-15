@@ -1,3 +1,28 @@
+# 16th Nov '19
+# Time: O(s+g)
+# Space: O(s+g)
+
+class Solution:
+    def getHint(self, secret: str, guess: str) -> str:
+
+        bulls = 0
+        cow = 0
+
+        bulls = sum(x==y for x,y in zip(secret, guess))
+
+        s_map = collections.Counter(secret)
+        g_map = collections.Counter(guess)
+
+        total = 0
+        for ch in s_map:
+            if ch in g_map:
+                total+=min(g_map[ch], s_map[ch])
+
+        cows = total-bulls
+
+        arr = [str(bulls),"A",str(cows),"B"]
+        return "".join(arr)
+
 # Time: O(m+n)
 # Space: O(m+n)
 class Solution:
@@ -34,5 +59,3 @@ class Solution:
         op.append("B")
 
         return "".join(op)
-
-        
