@@ -26,9 +26,9 @@ class NumArray:
         while i>=0:
             self.arr[i]+=diff
 
-            if i%2==0:
+            if i%2==0: # right_child
                 i = i//2-1
-            else:
+            else:      # left_child
                 i = i//2
 
         # print(self.arr)
@@ -41,15 +41,15 @@ class NumArray:
         cur_sum = 0
         while i<=j:
             # print(i,j)
-            if i%2==0:
+            if i%2==0:  # right_child
                 cur_sum+=self.arr[i]
                 i+=1
-            if j%2==1:
+            if j%2==1:  # left_child
                 cur_sum+=self.arr[j]
                 j-=1
 
-            i = i//2
-            j = j//2-1
+            i = i//2    # index i is guaranteed to be left_child
+            j = j//2-1  # index j is guaranteed to be right_child
 
 
         return cur_sum
