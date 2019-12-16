@@ -15,11 +15,9 @@ class Solution:
 
         index = self.findInsertionIndex(arr, x)
 
-#         we k elements to left of index, and right of index, then take half from each.
-
         output = [arr[index]]
 
-        left = max(0, index-k-1)
+        left = max(0, index-k-1) # left = max(0, index-k) taking k-1 elements from the left, since 1 left element will be at the index
         right = min(len(arr)-1, index+k-1)
 
         while right-left+1>k:
