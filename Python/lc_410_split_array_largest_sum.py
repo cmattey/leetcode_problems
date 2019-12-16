@@ -1,3 +1,77 @@
+# 15th Dec '19
+# Runtime: 28 ms, faster than 96.78% of Python3
+class Solution:
+    def splitArray(self, nums: List[int], m: int) -> int:
+
+        left = max(nums)
+        right = sum(nums)
+
+        ans = float('inf')
+        while left<=right:
+
+            guess_max = (left+right)//2
+
+            cur_groups = 1
+            cur_sum = 0
+
+            for num in nums:
+                cur_sum+=num
+
+                if cur_sum>guess_max:
+                    cur_sum = num
+                    cur_groups+=1
+
+            if cur_groups<=m:
+                ans = guess_max
+                right = guess_max-1
+            elif cur_groups>m:
+                left = guess_max+1
+
+        return ans    
+
+
+# 15th Nov '19
+# Time: O(nlog(sum_array)), n= len(nums)
+# Space: O(1)
+# Runtime: 32 ms, faster than 96.69% of Python3
+class Solution:
+    def splitArray(self, nums: List[int], m: int) -> int:
+        """
+        largest_sum possible ranges = max(nums), sum(nums)
+        make guess, get corresponding value of m, optimize for min largest_sum
+        Binary Search approach
+        """
+
+        left = max(nums)
+        right = sum(nums)
+
+        while left<right:
+
+            guess = left+ (right-left)//2
+
+            cur_split = 1
+            cur_sum = 0
+
+            for num in nums:
+                cur_sum+=num
+
+                if cur_sum>guess:
+                    cur_sum = num
+                    cur_split+=1
+
+            if cur_split>m: # guess too small
+                left = guess+1
+            else:
+                right = guess
+        #     elif cur_split==m: Alternate conditions, faster than 98.75%
+        #         right = guess
+        #     else:
+        #         right = guess-1
+        #
+        # return left # only left
+
+        return right # or left
+
 # Time: O(nlog(sum(nums)))
 # Space: O(1)
 class Solution:
