@@ -1,4 +1,41 @@
 # 63. Unique Paths II
+
+# Nov 18th '19
+# Time: O(size(grid))
+# Space: O(len(grid))
+
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+
+        if obstacleGrid[0][0]==1 or obstacleGrid[-1][-1]==1:
+            return 0
+
+        first_row = [0]*len(obstacleGrid[0])
+
+        first_row[0] = 1
+        for col in range(1, len(obstacleGrid[0])):
+            if obstacleGrid[0][col]==1:
+                break
+            first_row[col] = 1
+
+        col_not_blocked = True
+        for row in range(1, len(obstacleGrid)):
+            # dp_arr[0] = dp_arr[0]*(1-obstacleGrid[row][0]) # Can potentially do this
+            for col in range(len(obstacleGrid[0])):
+                if col==0:
+                    if obstacleGrid[row][0]==1:
+                        col_not_blocked = False
+                        first_row[col] = 0
+                    elif obstacleGrid[row][0]==0 and col_not_blocked:
+                        first_row[col] = 1
+
+                elif obstacleGrid[row][col]==0:
+                    first_row[col] = first_row[col-1] + first_row[col]
+                else:
+                    first_row[col] = 0
+
+        return first_row[-1]
+
 # Time: O(m*n)
 # Space: O(n)
 
