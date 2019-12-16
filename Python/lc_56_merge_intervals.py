@@ -1,5 +1,28 @@
 # 56. Merge Intervals
-# Time: O(len(intervals))
+# Nov 16 '19
+# Time: O(nlogn), n = len(intervals)
+# Space: O(1), excluding output
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+
+        if not intervals:
+            return []
+
+        intervals.sort(key = lambda interval: interval[0])
+
+        output = [intervals[0]]
+
+        for interval in intervals[1:]:
+
+            if output[-1][1] >=interval[0]:
+                output[-1][1] = max(interval[1], output[-1][1])
+            else:
+                output.append(interval)
+
+        return output
+
+
+# Time: O(len(intervals)logn)
 # Space: O(1) except sol
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
