@@ -2,8 +2,8 @@ class MagicDictionary:
 
     """
     Ver1 (current): Most info stored in set value for a particular key word.
-        Time: O(sum(w_i)^2) build and O(len(word)^2+len(wordList)) search ,
-        Space: O(sum(w_i)^2) build, and O(len(word)^2 + avg(len(w_i)))
+        Time: O(sum((w_i)^2)) build and O(len(word)^2+len(wordList)) search ,
+        Space: O(sum((w_i)^2)) build, and O(len(word)^2 + avg(len(w_i)))
         The square comes from the splicing operation which is O(n) in Python
     Ver2 (TBD): Instead of storing generalized neighbors as values, store them as keys, with a counter. Need to take care of case, when searched word is in wordList.
     """
