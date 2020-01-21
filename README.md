@@ -26,7 +26,7 @@
 * Queue
 
 
-## Ordered List
+## Questions
 
 | # | Title | Time | Space | Difficulty | Notes | Tags |
 |---|-------|------|-------|------------|-------|------|
