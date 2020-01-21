@@ -1,7 +1,7 @@
 # [Leetcode](https://leetcode.com/problemset/all/)
 
-![Language](https://img.shields.io/badge/language-Python-blue.svg)(./LICENSE)
-![License](https://img.shields.io/badge/license-MIT-orange.svg)
+![Language](https://img.shields.io/badge/language-Python-blue.svg)
+[![License](https://img.shields.io/badge/license-MIT-orange.svg)](./LICENSE)
 
 
 * This is a Repository where I record my solutions to LeetCode Problems
