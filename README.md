@@ -2,6 +2,7 @@
 
 ![Language](https://img.shields.io/badge/language-Python-blue.svg)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg)](./LICENSE)
+![Progress](https://img.shields.io/badge/progress-275%20%2F%201326-blueviolet.svg)
 
 
 * This is a Repository where I record my solutions to LeetCode Problems
