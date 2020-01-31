@@ -1,5 +1,5 @@
 # Time: O(max(m,n)), m = len(l1), n = len(l2)
-# Space: O(max(m,n))
+# Space: O(1), excluding output
 
 # Definition for singly-linked list.
 # class ListNode:
