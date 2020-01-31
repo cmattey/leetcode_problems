@@ -31,6 +31,20 @@
 
 | # | Title | Time | Space | Difficulty | Notes | Tags |
 |---|-------|------|-------|------------|-------|------|
-|[1](https://leetcode.com/problems/two-sum/)  |[Two Sum](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_1_two_sum.py)| O(n) |O(n)   | Easy       |       |Arrays, Hashtables      |
+|[1](https://leetcode.com/problems/two-sum/)  |[Two Sum](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_1_two_sum.py)| O(n) |O(n)   | Easy| - |Arrays, Hashtables|
+|[2](https://leetcode.com/problems/add-two-numbers/)|[Add Two Numbers](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_2_add_two_nums.py)|O(n)|O(1)|Medium|-|LinkedList|
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
+|   |       |      |       |            |       |      |
 |   |       |      |       |            |       |      |
 |   |       |      |       |            |       |      |
