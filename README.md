@@ -46,18 +46,30 @@
 |[13](https://leetcode.com/problems/roman-to-integer)   |[Roman to Integer](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_13.py)       |O(n) |O(1)   |Easy   |clean up   |Math, String  |
 |[14](https://leetcode.com/problems/longest-common-prefix)   |[Longest Common Prefix](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_14.py)   |O(n*len(lcp))  |O(lcp)  |Easy  |-   |String      |
 |[15](https://leetcode.com/problems/3sum)   |[3Sum](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_15.py)      |O(n^2)  |O(1)    |Medium   |-       |Two Pointers, Arrays      |
-|[16]()  |       |      |       |            |       |      |
-|[17]()   |       |      |       |            |       |      |
-|[18]()   |       |      |       |            |       |      |
-|[19]()   |       |      |       |            |       |      |
-|[20]()   |       |      |       |            |       |      |
-|[21]()   |       |      |       |            |       |      |
-|[22]()   |       |      |       |            |       |      |
-|[23]()   |       |      |       |            |       |      |
-|[24]()   |       |      |       |            |       |      |
-|[25]()   |       |      |       |            |       |      |
-|[26]()   |       |      |       |            |       |      |
-|[27]()   |       |      |       |            |       |      |
-|[28]()   |       |      |       |            |       |      |
-|[29]()   |       |      |       |            |       |      |
-|[30]()   |       |      |       |            |       |      |
+|[16](https://leetcode.com/problems/3sum-closest)  |[3Sum Closest](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_16.py)   |O(n^2)  |O(1)   |Medium |-       |Two Pointers, Arrays      |
+|[17](https://leetcode.com/problems/letter-combinations-of-a-phone-number)   |[Letter Combinations of a Phone Number](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_17.py)   |O(~3^n) |O(~3^n)  |Medium     |-       |Backtracking      |
+|[18](https://leetcode.com/problems/4sum)   |[4Sum](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_18.py)       | O(n^3)     |O(1)    |Medium  |-       |Two Pointers      |
+|[19](https://leetcode.com/problems/remove-nth-node-from-end-of-list)   |[Remove Nth Node From End of List](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_19.py)  |O(n) |O(1)  |Medium |-       |Two Pointers, LinkedList      |
+|[20](https://leetcode.com/problems/valid-parentheses/)   |[Valid Parentheses](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_20.py)|O(n) |O(n)    |Easy   |-       |String, Stack      |
+|[21](https://leetcode.com/problems/merge-two-sorted-lists/)   |[Merge Two Sorted Lists](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_21.py)       |O(m+n)  |O(1)  |Easy|- |LinkedList      |
+|[22](https://leetcode.com/problems/generate-parentheses)   |[Generate Parentheses](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_22.py)  |O(Catalan Number) |O(1)excluding op  |Medium |-       |String, Backtracking      |
+|[23](https://leetcode.com/problems/merge-k-sorted-lists)   |[Merge k Sorted Lists](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_23_merge_k_sorted_lists.py)  |O(nlogk) |O(k)  |Hard |Try constant space approach      |LinkedList, Heap, Divide and Conquer  |
+|[24](https://leetcode.com/problems/swap-nodes-in-pairs/)   |[Swap Nodes in Pairs](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_24.py)  |O(n)  |O(1) |Medium|-    |LinkedList      |
+|[25](https://leetcode.com/problems/reverse-nodes-in-k-group/)   |[Reverse Nodes in k-Group]()       |      |       |            |       |      |
+|[26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)   |[Remove Duplicates from Sorted Array](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_26.py)  |O(n) |O(1) |Easy       |in-place   |Two Pointers, Arrays   |
+|[27](https://leetcode.com/problems/remove-element/)   |[Remove Element](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_27.py)   |O(n)  |O(1) |Easy   |in-place |Two Pointers, Arrays      |
+|[28](https://leetcode.com/problems/implement-strstr/)   |[Implement strStr()]()  |      |    |Easy  |using KMP  |Two Pointers, String      |
+|[29](https://leetcode.com/problems/divide-two-integers/)   |[Divide Two Integers](https://github.com/cmattey/leetcode_problems/blob/master/Python/lc_29.py)    |O(log(dividend)) |O(1) |Medium  |-       |Binary Search, Math      |
+|[30](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)   |[Substring with Concatenation of All Words]()       |      |       |Hard            |       |HashMap, Two Pointers, String  |
+|Check out the Python directory for more...         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
+|         |         |      |       |           |       |       |
