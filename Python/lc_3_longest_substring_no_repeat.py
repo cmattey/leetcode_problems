@@ -1,3 +1,30 @@
+# Review Mar 9th '20
+# Time: O(len(s))
+# Space: O(size(char_set))
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+
+        import collections
+        ch_map = collections.defaultdict(int)
+
+        ans = 0
+        start = 0
+
+        for index, ch in enumerate(s):
+
+            if ch not in s:     # can combine this, and else condition, since they are same
+                ch_map[ch] = index
+                ans = max(ans, index-start+1)
+            elif ch in ch_map and ch_map[ch]>=start:
+                start = ch_map[ch]+1
+                ch_map[ch] = index
+            else:
+                ch_map[ch] = index
+                ans = max(ans, index-start+1)
+
+        return ans
+
 # Time: O(len(s))
 # Space: O(size(char_set))
 
