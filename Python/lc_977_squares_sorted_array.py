@@ -1,4 +1,47 @@
 # 977. Squares of a Sorted Array
+
+# Review Mar 10th '20
+# Time: O(N)
+# Space: O(N)
+
+class Solution:
+    def sortedSquares(self, A: List[int]) -> List[int]:
+
+        first_pos = len(A)
+
+        for index, num in enumerate(A):
+            if num>=0:
+                first_pos = index
+                break
+
+        # first_neg = -1
+        # if first_pos==len(A):
+        #     first_neg = len(A)-1
+        # elif first_pos>0:
+        #     first_neg = first_pos-1
+
+        first_neg = first_pos-1
+
+        res = []
+        while first_neg>-1 and first_pos<len(A):
+
+            if abs(A[first_neg])<A[first_pos]:
+                res.append(A[first_neg]*A[first_neg])
+                first_neg-=1
+            else:
+                res.append(A[first_pos]*A[first_pos])
+                first_pos+=1
+
+        while first_neg>-1:
+            res.append(A[first_neg]*A[first_neg])
+            first_neg-=1
+
+        while first_pos<len(A):
+            res.append(A[first_pos]*A[first_pos])
+            first_pos+=1
+
+        return res
+
 # Time: O(n)
 # Space: O(n)
 class Solution:
