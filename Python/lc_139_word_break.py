@@ -1,4 +1,23 @@
 # 139. Word Break
+
+# Mar 20th '20
+# Time: O(n^2)
+# Space: O(n)
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+
+        bool_arr = [True]+([False]*len(s))
+        wordDict = set(wordDict)
+        
+        for start in range(len(s)):
+            for end in range(start, len(s)):
+
+                if s[start:end+1] in wordDict:
+                    if bool_arr[start]:
+                        bool_arr[end+1] = True
+
+        return bool_arr[-1]
+
 # Nov 22nd '19
 # Time: O(n^2), O(n^3), if we consider splicing?
 # Space: O(n)
