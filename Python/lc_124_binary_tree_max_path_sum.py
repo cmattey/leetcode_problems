@@ -1,6 +1,8 @@
 # Time: O(size(tree))
 # Space: O(1), excluding stack space, else O(size(tree))
 
+# March30th '20
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -8,7 +10,39 @@
 #         self.left = None
 #         self.right = None
 
-class Solution:
+class Solution1:
+
+    max_sum = float('-inf')
+    def maxPathSum(self, root: TreeNode) -> int:
+
+        self.util(root)
+
+        return self.max_sum
+
+    def util(self, root):
+
+        if not root:
+            return 0
+
+        left_sum = self.util(root.left)
+        right_sum = self.util(root.right)
+
+        left_sum = 0 if left_sum<0 else left_sum
+        right_sum = 0 if right_sum<0 else right_sum
+
+        cur_max = left_sum + right_sum + root.val
+        self.max_sum = max(self.max_sum, cur_max)
+
+        return max(left_sum, right_sum) + root.val
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution2:
 
     max_sum = float('-inf') # -1<<31
 
