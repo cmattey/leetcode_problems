@@ -27,6 +27,25 @@ func ReadNums(filename string) []int {
 	return nums
 }
 
+// ReadStr reads a new line separated file of strings
+// and returns a slice of strings
+func ReadStr(filename string) []string {
+	var strs []string
+
+	file, err := os.Open(filename)
+	Check(err)
+
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+
+	for scanner.Scan() {
+		strs = append(strs, scanner.Text())
+	}
+
+	return strs
+}
+
 // Check checks for error, and panics if err not nil
 func Check(e error) {
 	if e != nil {
