@@ -1,9 +1,5 @@
 package Go
 
-import (
-	"fmt"
-)
-
 func isMatch(s string, p string) bool {
 
 	m := make(map[Pair]bool)
