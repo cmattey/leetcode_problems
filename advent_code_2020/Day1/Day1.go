@@ -6,10 +6,11 @@ import (
 )
 
 func main() {
-	fmt.Println(solveDay1("Day1_input.txt"))
+	fmt.Println(SolveDay1("Day1_input.txt"))
 }
 
-func solveDay1(filename string) (int, int) {
+// SolveDay1 solution for Day1
+func SolveDay1(filename string) (int, int) {
 	nums := helpers.ReadNums(filename)
 	return twoSum2020(nums), threeSum2020(nums)
 }
