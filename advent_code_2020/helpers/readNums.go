@@ -52,3 +52,14 @@ func Check(e error) {
 		panic(e)
 	}
 }
+
+func Find(haystack []string, needle string) bool {
+
+	for _, val := range haystack {
+		if val == needle {
+			return true
+		}
+	}
+
+	return false
+}
