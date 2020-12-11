@@ -64,6 +64,16 @@ func Find(haystack []string, needle string) bool {
 	return false
 }
 
+func Locate(haystack []string, needle string) int {
+	for i, val := range haystack {
+		if val == needle {
+			return i
+		}
+	}
+
+	return -1
+}
+
 func Max(nums ...int) int {
 
 	curAns := nums[0]
