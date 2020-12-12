@@ -19,7 +19,7 @@ type childObj struct {
 	count int
 }
 
-// Graph is out custom graph Data Structure
+// Graph is our custom graph Data Structure
 type Graph struct {
 	m map[string][]childObj
 }
