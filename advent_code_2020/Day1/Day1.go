@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"leetcode_problems/EPI/advent_code_2020/helpers"
+	"leetcode_problems/advent_code_2020/helpers"
 )
 
 func main() {
