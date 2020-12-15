@@ -85,3 +85,15 @@ func Max(nums ...int) int {
 
 	return curAns
 }
+
+func Min(nums ...int) int {
+
+	curAns := nums[0]
+	for _, num := range nums {
+		if num < curAns {
+			curAns = num
+		}
+	}
+
+	return curAns
+}
