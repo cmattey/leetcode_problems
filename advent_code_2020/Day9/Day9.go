@@ -6,23 +6,23 @@ import (
 )
 
 func main() {
-	// nums := helpers.ReadNums("Day9_input.txt")
-	testNums := helpers.ReadNums("Day9_input_test.txt")
+	nums := helpers.ReadNums("Day9_input.txt")
+	// testNums := helpers.ReadNums("Day9_input_test.txt")
 	// fmt.Println(solveDay9Part1(nums))
-	// fmt.Println(solveDay9Part2(nums))
-	fmt.Println(solveDay9Part2(testNums))
+	fmt.Println(solveDay9Part2(nums))
+	// fmt.Println(solveDay9Part2(testNums))
 	// fmt.Println(solveDay9Part1("Day9_input_test.txt"))
 }
 
 func solveDay9Part1(nums []int) int {
-	// preambleSize := 25
-	preambleSize := 5
+	preambleSize := 25
+	// preambleSize := 5
 	numMap := make(map[int]int)
 	for _, v := range nums[:preambleSize] {
 		numMap[v]++
 	}
 
-	for i, num := range nums[preambleSize:len(nums)] {
+	for i, num := range nums[preambleSize:] {
 		found := false
 		for k := range numMap {
 			if _, ok := numMap[num-k]; ok {
@@ -47,28 +47,36 @@ func solveDay9Part1(nums []int) int {
 
 func solveDay9Part2(nums []int) int {
 
+	var ans int
 	target := solveDay9Part1(nums)
-
+	fmt.Println(target)
 	rangeStart := 0
 	index := rangeStart
 	numSlice := make([]int, 0)
 	curSum := 0
 	for index < len(nums) {
-		curSum += nums[rangeStart]
+		curSum += nums[index]
 		numSlice = append(numSlice, nums[index])
 		if curSum > target {
 			rangeStart++
 			index = rangeStart
 			curSum = 0
 			numSlice = make([]int, 0)
-		} else if curSum == target {
-			fmt.Println(numSlice)
+		} else if curSum == target && len(numSlice) > 1 {
+			ans = computeAns(numSlice)
 			break
-			// ans := computeAns(numSlice)
 		} else {
 			index++
 		}
 	}
 
-	return -1
+	return ans
+}
+
+func computeAns(arr []int) int {
+
+	max := helpers.Max(arr...)
+	min := helpers.Min(arr...)
+
+	return max + min
 }
