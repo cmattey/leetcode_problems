@@ -1,4 +1,5 @@
-package Go
+
+package go
 
 // Time: O(n)
 // Space: O(n)
